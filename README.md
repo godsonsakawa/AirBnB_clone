@@ -60,4 +60,4 @@ $
 
 ## Authors :black_nib:
 * **Godson Sakawa** <[godsonsakawa](https://github.com/godsonsakawa)>
-* **Robin Owino** <[owinorobin05@gmail.com](https://github.com/robinowino)>
+* **Robin Owino** <[owinorobin05@gmail.com](https://github.com/Robin60)>
