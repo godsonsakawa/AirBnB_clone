@@ -10,9 +10,8 @@ class BaseModel:
     """Representation of the BaseModel of the Airbnb Clone."""
     def __init__(self, *args, **kwargs):
         """
-        Initialise a New Base Model.
-        
-        Args: 
+        Initialise a New Base Model
+        Args:
             *args (tuple): New attribute values
             **kwargs (dict): New key/value pairs of attributes.
         """
@@ -35,7 +34,6 @@ class BaseModel:
         datetime."""
         self.updated_at = datetime.today()
         models.storage.save()
-
 
     def to_dict(self):
         """Returns a dictionary containing all key/value of `__dict__` of the
