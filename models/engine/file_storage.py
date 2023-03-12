@@ -4,9 +4,15 @@
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 class FileStorage:
-    """Serializes instances to a JSON file and deserializes JSON file 
+    """Serializes instances to a JSON file and deserializes JSON file
     to instances. This is the abstracted storage engine
     Attributes:
           __file_path (str): The path to the JSON file
@@ -23,13 +29,13 @@ class FileStorage:
         """Sets in __objects the obj with key <obj class name>.id"""
         obj_name = obj.__class__.__name__
         FileStorage.__objects["{}.{}".format(obj_name, obj.id)] = obj
-        
+
     def save(self):
         """Serializes __objects to the JSON file (path: __file_path)"""
         o_dict = FileStorage.__objects
-        obj_dicts = {obj : o_dict[obj].to_dict() for obj in o_dict.keys()}
+        obj_dicts = {obj: o_dict[obj].to_dict() for obj in o_dict.keys()}
         with open(FileStorage.__file_path, "w") as f:
-            json.dump(obj_dicts,f)
+            json.dump(obj_dicts, f)
 
     def reload(self):
         """Deserialize the JSON file __file_path to __objects, if it exists"""
@@ -42,4 +48,3 @@ class FileStorage:
                     self.new(eval(clsname)(**ob))
         except FileNotFoundError:
             return
-
