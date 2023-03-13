@@ -15,7 +15,9 @@ class TestAmenity(unittest.TestCase):
     def setUp(self):
         '''
         Set up method
-        Renames the file_storage file to avoid iterfering with data
+        -> Creates an Instance that will be available for all test functions in
+        your class.
+        Renames the file_storage file to avoid interfering with data
         '''
         if os.path.isfile("file.json"):
             os.rename("file.json", "backup_file.json")
@@ -25,6 +27,7 @@ class TestAmenity(unittest.TestCase):
 
     def tearDown(self):
         '''
+        -> Removing files.
         Tear down method
         Does clean up
         '''
