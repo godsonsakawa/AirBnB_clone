@@ -140,10 +140,11 @@ class HBNBCommand(cmd.Cmd):
             if arg not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
             else:
-                for key, obj in obj_dict.items():
+                for key, obj in obj_dict.values():
                     if arg in key:
                         obj_list.append(str(obj))
                     print(obj_list)
+    
     def do_update(self, arg):
         """
         Usage: update <class> <id> <attribute name> <attribute value>
